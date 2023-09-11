@@ -1,6 +1,8 @@
 import express from "express";
 import connect from "./database/mongo.js";
+import dotenv from "dotenv";
 
+dotenv.config();
 connect();
 
 const app = express();
