@@ -1,4 +1,7 @@
 import express from "express";
+import connect from "./database/mongo.js";
+
+connect();
 
 const app = express();
 
