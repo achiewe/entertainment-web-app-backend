@@ -33,3 +33,6 @@ const projectSchema = new Schema({
     required: true,
   },
 });
+
+const Entertainment = model("entertainment", projectSchema);
+export default Entertainment;
