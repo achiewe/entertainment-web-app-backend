@@ -1,38 +1,25 @@
 import { Schema, model } from "mongoose";
 
 const projectSchema = new Schema({
-  title: {
-    type: Schema.Types.String,
-    required: true,
-  },
+  title: String,
   thumbnail: {
     trending: {
-      small: { type: Schema.Types.String, required: true },
-      medium: { type: Schema.Types.String, required: true },
-      large: { type: Schema.Types.String, required: true },
+      small: String,
+      large: String,
+    },
+    regular: {
+      small: String,
+      medium: String,
+      large: String,
     },
   },
-  year: {
-    type: Schema.Types.Number,
-    required: true,
-  },
-  category: {
-    type: Schema.Types.String,
-    required: true,
-  },
-  rating: {
-    type: Schema.Types.String,
-    required: true,
-  },
-  isBookmarked: {
-    type: Schema.Types.Boolean,
-    required: true,
-  },
-  isTrending: {
-    type: Schema.Types.Boolean,
-    required: true,
-  },
+  year: Number,
+  category: String,
+  rating: String,
+  isBookmarked: Boolean,
+  isTrending: Boolean,
 });
 
-const Entertainment = model("entertainment", projectSchema);
+const Entertainment = model("Entertainment", projectSchema);
+
 export default Entertainment;
