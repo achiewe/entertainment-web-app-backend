@@ -24,4 +24,6 @@ app.post("/post", PostInfo);
 app.post("/Signup", UserInfo);
 app.post("/Validate", UserLogin);
 
-app.listen(3000);
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
