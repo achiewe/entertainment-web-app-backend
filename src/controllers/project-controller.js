@@ -46,3 +46,9 @@ export const UserInfo = async (req, res) => {
     res.status(500).json({ error: "happend error" });
   }
 };
+
+export const UserLogin = async (req, res) => {
+  try{
+    const {email, password} = req.body
+  }
+}
