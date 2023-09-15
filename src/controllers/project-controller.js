@@ -49,9 +49,11 @@ export const UserInfo = async (req, res) => {
 
 export const UserLogin = async (req, res) => {
   const { email, password } = req.body;
+
   const verifiedEmail = await User.findOne({ email });
   if (!verifiedEmail) {
-    return res.status(400).json({ error: "Invalid email address" });
+    res.status(400).json({ error: "Invalid email address" });
+    return;
   }
 
   const correctPass = verifiedEmail.password;
@@ -59,6 +61,7 @@ export const UserLogin = async (req, res) => {
 
   if (!validPass) {
     res.status(404).json({ error: { correctPass, password, validPass } });
+    return;
   }
 
   res.status(200).json({ message: "Successfully logged in" });

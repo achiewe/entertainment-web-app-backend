@@ -22,6 +22,6 @@ app.get("/", (req, res) => {
 
 app.post("/post", PostInfo);
 app.post("/Signup", UserInfo);
-app.post("/login", UserLogin);
+app.post("/Validate", UserLogin);
 
 app.listen(3000);
