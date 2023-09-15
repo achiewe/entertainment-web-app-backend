@@ -1,7 +1,11 @@
 import express from "express";
 import connect from "./src/database/mongo.js";
 import dotenv from "dotenv";
-import { PostInfo, UserInfo } from "./src/controllers/project-controller.js";
+import {
+  PostInfo,
+  UserInfo,
+  UserLogin,
+} from "./src/controllers/project-controller.js";
 import bodyParser from "body-parser";
 import cors from "cors";
 
@@ -18,5 +22,6 @@ app.get("/", (req, res) => {
 
 app.post("/post", PostInfo);
 app.post("/Signup", UserInfo);
+app.post("/login", UserLogin);
 
 app.listen(3000);
