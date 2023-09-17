@@ -66,3 +66,14 @@ export const UserLogin = async (req, res) => {
 
   res.status(200).json({ message: "Successfully logged in" });
 };
+
+export const getEntertainment = async (req, res) => {
+  try {
+    const entertainment = await Entertainment.find();
+    res.status(201).json(entertainment);
+    return entertainment;
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "can't take info" });
+  }
+};
