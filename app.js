@@ -5,6 +5,7 @@ import {
   PostInfo,
   UserInfo,
   UserLogin,
+  getEntertainment,
 } from "./src/controllers/project-controller.js";
 import bodyParser from "body-parser";
 import cors from "cors";
@@ -23,6 +24,7 @@ app.get("/", (req, res) => {
 app.post("/post", PostInfo);
 app.post("/Signup", UserInfo);
 app.post("/Validate", UserLogin);
+app.get("/takeEntertainment", getEntertainment);
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
