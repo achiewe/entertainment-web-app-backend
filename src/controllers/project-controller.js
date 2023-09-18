@@ -77,3 +77,32 @@ export const getEntertainment = async (req, res) => {
     res.status(500).json({ error: "can't take info" });
   }
 };
+
+export const setBookmark = async (req, res) => {
+  try {
+    const clientEmail = req.params.email;
+    const id = req.params.id;
+    const { isbookmarked } = req.body;
+
+    const user = await User.findOne({ email: clientEmail });
+
+    if (!user) {
+      return res.status(400).json({ error: "user not found" });
+    }
+
+    const ContentItem = user.entertainmentInfo.id(id);
+
+    if (!ContentItem) {
+      return res.status(400).json({ error: "entertainment item not found" });
+    }
+
+    ContentItem.isbookmarked = isbookmarked;
+
+    await user.save();
+
+    res.json({ message: "bookmark update" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "didn't update data" });
+  }
+};
