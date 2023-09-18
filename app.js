@@ -7,6 +7,7 @@ import {
   UserLogin,
   getEntertainment,
   setBookmark,
+  fetchUserEntertainmentInfo,
 } from "./src/controllers/project-controller.js";
 import bodyParser from "body-parser";
 import cors from "cors";
@@ -27,6 +28,7 @@ app.post("/Signup", UserInfo);
 app.post("/Validate", UserLogin);
 app.get("/takeEntertainment", getEntertainment);
 app.put("/changeBookmark/:email/:id", setBookmark);
+app.get("/user", fetchUserEntertainmentInfo);
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");

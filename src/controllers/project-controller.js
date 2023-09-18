@@ -107,7 +107,7 @@ export const setBookmark = async (req, res) => {
   }
 };
 
-export const getUser = async (req, res) => {
+export const fetchUserEntertainmentInfo = async (req, res) => {
   try {
     const userEmail = req.query.email;
     const user = await User.findOne({ email: userEmail }, "entertainmentInfo");
