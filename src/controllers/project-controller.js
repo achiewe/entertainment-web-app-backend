@@ -106,3 +106,15 @@ export const setBookmark = async (req, res) => {
     res.status(500).json({ error: "didn't update data" });
   }
 };
+
+export const getUser = async (req, res) => {
+  try {
+    const userEmail = req.query.email;
+    const user = await User.findOne({ email: userEmail }, "entertainmentInfo");
+    if (!user) {
+      return res.status(500).json({ error: "User not found" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Server error" });
+  }
+};
