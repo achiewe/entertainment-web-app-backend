@@ -82,7 +82,7 @@ export const setBookmark = async (req, res) => {
   try {
     const clientEmail = req.params.email;
     const id = req.params.id;
-    const { isbookmarked } = req.body;
+    const { isBookmarked } = req.body;
 
     const user = await User.findOne({ email: clientEmail });
 
@@ -96,7 +96,7 @@ export const setBookmark = async (req, res) => {
       return res.status(400).json({ error: "entertainment item not found" });
     }
 
-    ContentItem.isbookmarked = isbookmarked;
+    ContentItem.isBookmarked = isBookmarked;
 
     await user.save();
 
