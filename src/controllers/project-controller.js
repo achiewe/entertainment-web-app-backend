@@ -114,6 +114,8 @@ export const fetchUserEntertainmentInfo = async (req, res) => {
     if (!user) {
       return res.status(500).json({ error: "User not found" });
     }
+
+    res.status(200).json(user.entertainmentInfo);
   } catch (error) {
     res.status(500).json({ error: "Server error" });
   }
