@@ -16,8 +16,9 @@ dotenv.config();
 connect();
 
 const app = express();
-app.use(cors());
+
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
   return res.status(200).json({ message: "app works" });
