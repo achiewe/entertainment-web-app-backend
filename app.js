@@ -30,6 +30,4 @@ app.get("/takeEntertainment", getEntertainment);
 app.put("/changeBookmark/:email/:id", setBookmark);
 app.get("/user", fetchUserEntertainmentInfo);
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
+app.listen(process.env.PORT || 3000);
