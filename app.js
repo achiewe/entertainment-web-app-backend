@@ -24,6 +24,7 @@ app.get("/", (req, res) => {
   return res.status(200).json({ message: "app works" });
 });
 
+//code for requests
 app.post("/post", PostInfo);
 app.post("/Signup", UserInfo);
 app.post("/Validate", UserLogin);
