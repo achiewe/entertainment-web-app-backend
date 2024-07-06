@@ -15,7 +15,7 @@ import cors from "cors";
 dotenv.config();
 connect();
 
-// express framework
+
 const app = express();
 
 app.use(cors());
